@@ -1,0 +1,21 @@
+{
+    "projectId": "641fbc943f6655a8cd36",
+    "projectName": "Remind Me",
+    "functions": [
+        {
+            "$id": "645f4db3188cb837b948",
+            "name": "Send Reminder",
+            "runtime": "node-16.0",
+            "path": "functions/Send Reminder",
+            "entrypoint": "src/index.js",
+            "ignore": [
+                "node_modules",
+                ".npm"
+            ],
+            "execute": [],
+            "events": [],
+            "schedule": "",
+            "timeout": 15
+        }
+    ]
+}
