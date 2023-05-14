@@ -18,17 +18,6 @@ const querystring = require("querystring");
 module.exports = async function (req, res) {
   const client = new sdk.Client();
 
-  // You can remove services you don't use
-  const account = new sdk.Account(client);
-  const avatars = new sdk.Avatars(client);
-  const database = new sdk.Databases(client);
-  const functions = new sdk.Functions(client);
-  const health = new sdk.Health(client);
-  const locale = new sdk.Locale(client);
-  const storage = new sdk.Storage(client);
-  const teams = new sdk.Teams(client);
-  const users = new sdk.Users(client);
-
   const databaseID = "642022e1e1bf13aa04b9";
   const collectionID = {
     reminders: "642023bce66fe86cc9c8",
@@ -55,6 +44,8 @@ module.exports = async function (req, res) {
       .setProject(req.variables["APPWRITE_FUNCTION_PROJECT_ID"])
       .setKey(req.variables["APPWRITE_FUNCTION_API_KEY"])
       .setSelfSigned(true);
+
+    const database = new sdk.Databases(client);
 
     try {
       const { total, documents } = await database.listDocuments(
